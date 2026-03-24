@@ -6,8 +6,8 @@
 
 ## 🚀 Demo
 
-🌐 **App:** [teslo-shop.netlify.app](https://teslo-shop.netlify.app) ← *(actualiza con tu URL)*
-🔗 **API:** [teslo-shop.onrender.com](https://teslo-shop.onrender.com) ← *(actualiza con tu URL)*
+🌐 **App:** [teslo-shop.netlify.app](https://tienda-teslo-angular.netlify.app)
+🔗 **API:** [teslo-shop.onrender.com](https://nest-tienda-teslo.onrender.com/api)
 
 ---
 
