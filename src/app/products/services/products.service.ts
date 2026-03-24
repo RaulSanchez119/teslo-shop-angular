@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Gender, ProductsResponse } from '@products/interfaces/product.interface';
 import { delay, forkJoin, map, Observable, of, switchMap, tap } from 'rxjs';
-import { environment } from 'src/environments/environment.development';
+import { environment } from 'src/environments/environment';
 import { Product } from '../interfaces/product.interface';
 import { User } from '@auth/interfaces/user.interface';
 

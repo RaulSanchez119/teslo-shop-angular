@@ -1,6 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { startWith } from 'rxjs';
-import { environment } from 'src/environments/environment.development';
+import { environment } from 'src/environments/environment';
 
 const baseUrl = environment.baseUrl;
 
