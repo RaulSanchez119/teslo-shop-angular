@@ -1,3 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: 'dark';
+}
+
+@theme {
+  --font-montserrat: "Montserrat", "sans-serif";
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/fonts/montserrat-alternates/montserrat-alternates.medium.ttf")
+    format("truetype");
+}
+
+ @theme {
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  --animate-premium-in: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+ }
+
+ @theme {
+  @keyframes error-shake-in {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px) scale(0.95);
+    }
+    20% {
+      opacity: 1;
+      transform: translateY(0) scale(1.02);
+    }
+    35% {
+      transform: translateX(-6px);
+    }
+    50% {
+      transform: translateX(6px);
+    }
+    65% {
+      transform: translateX(-4px);
+    }
+    80% {
+      transform: translateX(4px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  --animate-error-in: error-shake-in 0.5s ease;
+}

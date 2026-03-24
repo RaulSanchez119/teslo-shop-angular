@@ -1,0 +1,63 @@
+<form class="flex flex-col gap-2" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+  <!-- Full Name -->
+  <label class="input input-bordered flex items-center gap-2">
+    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+        <circle cx="12" cy="8" r="4"></circle>
+        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path>
+      </g>
+    </svg>
+    <input type="text" placeholder="Nombre completo" class="grow" formControlName="fullName" />
+  </label>
+
+  <!-- Email -->
+  <label class="input input-bordered flex items-center gap-2">
+    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+      </g>
+    </svg>
+    <input type="email" placeholder="Correo electrónico" class="grow" formControlName="email" />
+  </label>
+
+  <!-- Password -->
+  <label class="input input-bordered flex items-center gap-2">
+    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+        <path d="M12 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path>
+        <rect x="3" y="10" width="18" height="11" rx="2"></rect>
+        <path d="M7 10V7a5 5 0 0 1 10 0v3"></path>
+      </g>
+    </svg>
+    <input [type]="showPassword ? 'text' : 'password'" placeholder="Contraseña" class="grow"
+      formControlName="password" />
+    <button type="button" (click)="togglePassword()" class="opacity-60 hover:opacity-100 transition">
+      @if (!showPassword) {
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+      }
+      @if (showPassword) {
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20C5 20 1 12 1 12a21.77 21.77 0 0 1 5.06-7.94" />
+          <path d="M1 1l22 22" />
+        </svg>
+      }
+    </button>
+  </label>
+
+  @if (hasError()) {
+    <auth-alert [message]="'Los campos introducidos no son válidos'"/>
+  }
+
+  <button class="btn btn-accent">Registrarse</button>
+
+  <p class="text-slate-700">
+    ¿Ya tienes cuenta?
+    <a routerLink="/auth/login" class="text-accent">Inicia sesión aquí</a>
+  </p>
+
+</form>

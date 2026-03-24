@@ -1,0 +1,81 @@
+@if (productResource.isLoading()) {
+<div class="flex justify-center items-center h-screen">
+  <span class="loading loading-spinner loading-lg text-accent"></span>
+</div>
+}
+
+@if (productResource.hasValue()) {
+<div class="min-h-screen p-6 sm:p-10 lg:p-16">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12 items-start">
+
+    <!-- Carrusel -->
+    <!-- Carrusel -->
+    <div class="w-full sticky top-8 aspect-square">
+      <product-carousel [images]="productResource.value()?.images ?? []" />
+    </div>
+
+    <!-- Info -->
+    <div class="flex flex-col gap-6">
+
+      <!-- Cabecera -->
+      <div>
+        <div class="flex items-center gap-3 mb-2">
+          <p class="text-xs text-accent uppercase tracking-widest font-semibold">Tesla Collection</p>
+          <span class="badge badge-accent badge-outline text-xs uppercase">
+            {{ productResource.value()?.gender }}
+          </span>
+        </div>
+        <h2 class="text-4xl lg:text-5xl font-bold font-montserrat leading-tight">
+          {{ productResource.value()?.title }}
+        </h2>
+      </div>
+
+      <!-- Precio y stock -->
+      <div class="flex items-center justify-between">
+        <span class="text-4xl font-bold text-accent">
+          ${{ productResource.value()?.price | number:'1.2-2' }}
+        </span>
+        <span class="text-sm text-gray-400 flex items-center gap-1">
+          <span class="inline-block w-2 h-2 rounded-full bg-accent"></span>
+          {{ productResource.value()?.stock }} in stock
+        </span>
+      </div>
+
+      <div class="divider my-0"></div>
+
+      <!-- Descripción -->
+      <p class="text-gray-300 leading-relaxed text-base lg:text-lg">
+        {{ productResource.value()?.description }}
+      </p>
+
+      <div class="divider my-0"></div>
+
+      <!-- Tallas -->
+      <div>
+        <p class="text-xs text-gray-400 uppercase tracking-widest mb-3">Sizes</p>
+        <div class="flex flex-wrap gap-2">
+          @for (size of productResource.value()?.sizes ?? []; track size) {
+          <span
+            class="badge badge-outline badge-lg text-white border-white/30 hover:border-accent hover:text-accent cursor-pointer transition-all px-4 py-3">
+            {{ size }}
+          </span>
+          }
+        </div>
+      </div>
+
+      <!-- Tags -->
+      <div>
+        <p class="text-xs text-gray-400 uppercase tracking-widest mb-3">Tags</p>
+        <div class="flex flex-wrap gap-2">
+          @for (tag of productResource.value()?.tags ?? []; track tag) {
+          <span class="badge badge-ghost text-sm px-3 py-2">
+            #{{ tag }}
+          </span>
+          }
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+}

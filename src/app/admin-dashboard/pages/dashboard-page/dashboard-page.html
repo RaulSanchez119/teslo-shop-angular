@@ -1,0 +1,44 @@
+<div class="flex flex-col gap-6">
+
+  <div>
+    <h1 class="text-3xl font-bold">Panel de administración</h1>
+    <p class="text-base-content/50 mt-1">Bienvenido al gestor de la tienda Teslo Shop</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Tarjetas de resumen -->
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+    <div class="bg-base-300 rounded-xl p-5 flex flex-col gap-1">
+      <span class="text-base-content/40 text-sm">Total de productos</span>
+      <span class="text-3xl font-bold text-accent">{{ totalProducts() }}</span>
+      <span class="text-xs text-base-content/30">Artículos en catálogo</span>
+    </div>
+    <div class="bg-base-300 rounded-xl p-5 flex flex-col gap-1">
+      <span class="text-base-content/40 text-sm">Categorías</span>
+      <span class="text-3xl font-bold text-accent">4</span>
+      <span class="text-xs text-base-content/30">Hombre, Mujer, Kids, Unisex</span>
+    </div>
+    <div class="bg-base-300 rounded-xl p-5 flex flex-col gap-1">
+      <span class="text-base-content/40 text-sm">Estado de la tienda</span>
+      <span class="text-3xl font-bold text-success">Activa</span>
+      <span class="text-xs text-base-content/30">Todos los sistemas operativos</span>
+    </div>
+  </div>
+
+  <!-- Descripción -->
+  <div class="bg-base-300 rounded-xl p-6 flex flex-col gap-3">
+    <h2 class="text-xl font-bold">Acerca de Teslo Shop</h2>
+    <p class="text-base-content/60 leading-relaxed">
+      Teslo Shop es una aplicación de demostración que simula la tienda oficial de merchandising de Tesla.
+      Desde este panel puedes gestionar el catálogo de productos, actualizar precios, controlar el inventario
+      y administrar las imágenes de cada artículo.
+    </p>
+    <p class="text-base-content/60 leading-relaxed">
+      Utiliza el menú lateral para navegar entre las secciones disponibles. Accede a
+      <a routerLink="/admin/products" class="text-accent hover:underline">Productos</a>
+      para ver y editar el catálogo completo.
+    </p>
+  </div>
+
+</div>
